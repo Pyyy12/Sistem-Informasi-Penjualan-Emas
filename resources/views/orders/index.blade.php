@@ -1,0 +1,7 @@
+@extends('layouts.app')
+@section('title', 'Pesanan Saya')
+@section('content')
+<div class="container py-5"><span class="eyebrow">ORDER HISTORY</span><h1 class="section-title mt-2">Pesanan <span>saya</span></h1>
+@forelse($orders as $order)<div class="order-card mt-4"><div class="d-flex flex-column flex-md-row justify-content-between gap-2"><div><small class="text-secondary">Nomor pesanan</small><h5 class="mb-1">{{ $order->order_number }}</h5><small class="text-secondary">{{ $order->created_at->format('d M Y, H:i') }}</small></div><div class="d-flex gap-2 align-items-start flex-wrap"><span class="status-pill">{{ ucfirst($order->status) }}</span><span class="status-pill {{ $order->payment_status === 'paid' ? 'status-paid' : '' }}">Pembayaran: {{ ucfirst($order->payment_status) }}</span></div></div><hr>@foreach($order->items as $item)<div class="d-flex justify-content-between py-1"><span>{{ $item->product_name }} <small class="text-secondary">× {{ $item->quantity }}</small></span><strong>Rp{{ number_format($item->line_total, 0, ',', '.') }}</strong></div>@endforeach<hr><div class="d-flex justify-content-between"><span>Total</span><strong class="price-gold fs-5">Rp{{ number_format($order->total, 0, ',', '.') }}</strong></div></div>@empty<div class="empty-state mt-4"><i class="bi bi-receipt"></i><h3>Belum ada pesanan</h3><p>Pesanan Anda akan muncul di halaman ini.</p><a href="{{ route('store.index') }}" class="btn btn-gold">Belanja Sekarang</a></div>@endforelse
+<div class="mt-4">{{ $orders->links() }}</div></div>
+@endsection
