@@ -1,58 +1,316 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# ✨ Aurelia Gold — Website Penjualan Emas
 
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+  <img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="350" alt="Laravel Logo">
 </p>
 
-## About Laravel
+<p align="center">
+  <strong>Website penjualan emas modern, elegan, responsif, dan mudah digunakan.</strong>
+</p>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+<p align="center">
+  <img src="https://img.shields.io/badge/Laravel-11-FF2D20?logo=laravel&logoColor=white" alt="Laravel 11">
+  <img src="https://img.shields.io/badge/PHP-8.2%2B-777BB4?logo=php&logoColor=white" alt="PHP">
+  <img src="https://img.shields.io/badge/MySQL-Database-4479A1?logo=mysql&logoColor=white" alt="MySQL">
+  <img src="https://img.shields.io/badge/Bootstrap-5-7952B3?logo=bootstrap&logoColor=white" alt="Bootstrap 5">
+</p>
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 📌 Tentang Aurelia Gold
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+**Aurelia Gold** adalah aplikasi website penjualan emas berbasis Laravel 11 yang dirancang untuk memudahkan pelanggan melihat katalog emas, memilih produk, melakukan pemesanan, dan memantau status transaksi.
 
-## Learning Laravel
+Aplikasi ini menyediakan dashboard admin untuk mengelola produk emas, stok, harga, pesanan, pelanggan, serta melihat ringkasan penjualan.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Website menggunakan desain bernuansa hitam dan emas dengan tampilan modern, elegan, dan responsif untuk desktop, tablet, maupun smartphone.
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## 🚀 Fitur Utama
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+### 👤 Fitur Pelanggan
+- Landing page dengan tampilan premium.
+- Registrasi akun dan login.
+- Katalog produk emas.
+- Pencarian dan filter kategori produk.
+- Detail produk, berat, kadar, harga, dan stok.
+- Keranjang belanja.
+- Checkout dan pencatatan pesanan.
+- Pilihan metode pembayaran transfer bank atau COD.
+- Riwayat transaksi dan status pesanan.
 
-## Agentic Development
+### 🛠️ Fitur Admin
+- Dashboard admin.
+- Statistik jumlah produk, pesanan, dan pelanggan.
+- Grafik pendapatan bulanan.
+- Tambah, lihat, ubah, dan nonaktifkan produk.
+- Pengelolaan harga, berat, kadar, serta stok emas.
+- Pengelolaan pesanan pelanggan.
+- Pembaruan status pesanan dan pembayaran.
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+### 🎨 Fitur Antarmuka
+- Desain modern dengan tema hitam dan emas.
+- Bootstrap 5 untuk layout responsif.
+- Animasi hover pada kartu produk dan tombol.
+- Ikon Bootstrap Icons.
+- Grafik menggunakan Chart.js.
+- Tampilan katalog dan detail produk yang elegan.
 
-```bash
-composer require laravel/boost --dev
+## 🧰 Teknologi yang Digunakan
 
-php artisan boost:install
+| Teknologi | Kegunaan |
+|---|---|
+| Laravel 11 | Backend aplikasi |
+| PHP 8.2+ | Bahasa pemrograman |
+| MySQL | Database |
+| Blade Template | Tampilan halaman |
+| Bootstrap 5 | Framework CSS |
+| Bootstrap Icons | Ikon antarmuka |
+| Chart.js | Grafik penjualan |
+| Eloquent ORM | Pengelolaan data database |
+
+## 📂 Struktur Project
+
+```text
+aurelia-gold/
+├── app/
+│   ├── Http/
+│   │   ├── Controllers/
+│   │   │   ├── Admin/
+│   │   │   │   ├── DashboardController.php
+│   │   │   │   ├── ProductController.php
+│   │   │   │   └── OrderController.php
+│   │   │   ├── AuthController.php
+│   │   │   ├── CartController.php
+│   │   │   ├── OrderController.php
+│   │   │   └── StoreController.php
+│   │   └── Middleware/
+│   │       └── AdminMiddleware.php
+│   └── Models/
+│       ├── User.php
+│       ├── Product.php
+│       ├── Order.php
+│       └── OrderItem.php
+├── bootstrap/
+│   └── app.php
+├── database/
+│   ├── migrations/
+│   └── seeders/
+│       └── DatabaseSeeder.php
+├── public/
+│   └── css/
+│       └── aurelia.css
+├── resources/
+│   └── views/
+│       ├── layouts/
+│       ├── store/
+│       ├── auth/
+│       ├── cart/
+│       ├── orders/
+│       └── admin/
+├── routes/
+│   └── web.php
+├── .env
+└── README.md
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+## ⚙️ Instalasi dan Konfigurasi
 
-## Contributing
+### 1. Persyaratan Sistem
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Pastikan perangkat sudah memiliki:
+- PHP 8.2 atau lebih baru yang kompatibel dengan Laravel 11.
+- Composer.
+- MySQL atau MariaDB.
+- Web browser.
+- Git (opsional).
 
-## Code of Conduct
+### 2. Buat Project Laravel
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Jika memulai dari awal, jalankan:
 
-## Security Vulnerabilities
+```bash
+composer create-project laravel/laravel:^11.0 aurelia-gold
+cd aurelia-gold
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Salin file aplikasi Aurelia Gold ke folder project Laravel tersebut. Gabungkan file yang tersedia dan periksa perubahan sebelum menimpa file bawaan.
 
-## License
+### 3. Buat Database
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Buat database baru melalui phpMyAdmin atau MySQL:
+
+```sql
+CREATE DATABASE aurelia_gold;
+```
+
+### 4. Konfigurasi File `.env`
+
+Buka file `.env`, lalu sesuaikan konfigurasi berikut:
+
+```env
+APP_NAME="Aurelia Gold"
+APP_ENV=local
+APP_DEBUG=true
+APP_URL=http://127.0.0.1:8000
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=aurelia_gold
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+Sesuaikan `DB_USERNAME` dan `DB_PASSWORD` dengan konfigurasi database lokal.
+
+### 5. Generate Application Key
+
+```bash
+php artisan key:generate
+```
+
+### 6. Jalankan Migration dan Seeder
+
+```bash
+php artisan migrate --seed
+```
+
+Perintah tersebut membuat tabel database dan memasukkan data awal produk beserta akun admin demo.
+
+Jika ingin mengulang seluruh database dari awal, gunakan perintah berikut hanya pada lingkungan pengembangan karena seluruh tabel akan dihapus dan dibuat kembali:
+
+```bash
+php artisan migrate:fresh --seed
+```
+
+### 7. Jalankan Server
+
+```bash
+php artisan serve
+```
+
+Buka website melalui browser:
+
+http://127.0.0.1:8000
+
+## 🔐 Akun Admin Demo
+
+Seeder menyediakan akun admin berikut untuk pengujian lokal:
+
+| Informasi | Nilai |
+|---|---|
+| Email | `admin@aureliagold.test` |
+| Password | `password` |
+
+**Penting:** akun tersebut hanya untuk pengembangan. Ganti password sebelum aplikasi digunakan di lingkungan publik.
+
+## 🗄️ Struktur Database
+
+### Tabel `users`
+Menyimpan akun pelanggan dan admin, termasuk nama, email, password, nomor telepon, alamat, dan hak akses admin.
+
+### Tabel `products`
+Menyimpan informasi produk emas, meliputi:
+- Nama dan kategori produk.
+- Berat dalam gram.
+- Kadar emas.
+- Harga jual.
+- Jumlah stok.
+- URL gambar.
+- Status aktif produk.
+
+### Tabel `orders`
+Menyimpan informasi transaksi, nomor pesanan, pelanggan, alamat pengiriman, total pembayaran, metode pembayaran, dan status pesanan.
+
+### Tabel `order_items`
+Menyimpan rincian setiap produk yang dipesan, jumlah pembelian, harga saat transaksi, dan subtotal per produk.
+
+## 🛒 Alur Transaksi
+
+1. Pelanggan membuka katalog produk.
+2. Pelanggan memilih produk emas.
+3. Produk ditambahkan ke keranjang.
+4. Pelanggan login atau mendaftar.
+5. Pelanggan mengisi informasi checkout.
+6. Sistem memvalidasi stok dan mencatat pesanan.
+7. Stok produk diperbarui.
+8. Admin memeriksa dan memperbarui status pesanan.
+9. Pelanggan dapat memantau status transaksi melalui halaman Pesanan Saya.
+
+## 📈 Dashboard dan Laporan
+
+Dashboard admin menampilkan:
+- Total produk.
+- Total pesanan.
+- Jumlah pelanggan.
+- Pendapatan dari pesanan dengan status pembayaran `paid`.
+- Grafik pendapatan per bulan.
+- Daftar pesanan terbaru.
+
+Grafik pendapatan menggunakan data transaksi yang sudah ditandai sebagai telah dibayar.
+
+## 🔒 Keamanan Aplikasi
+
+Aplikasi menggunakan fitur keamanan dasar Laravel, seperti:
+- Proteksi CSRF pada form.
+- Validasi input.
+- Hash password.
+- Middleware autentikasi.
+- Pembatasan akses dashboard admin.
+- Transaksi database saat membuat pesanan.
+- Pengecekan stok sebelum transaksi disimpan.
+
+Untuk penggunaan produksi, tambahkan pengujian keamanan, pembatasan percobaan login, logging aktivitas admin, konfigurasi HTTPS, backup database, dan pemeriksaan otorisasi secara menyeluruh.
+
+## 💳 Integrasi Pembayaran
+
+Versi awal Aurelia Gold mencatat pesanan dengan status pembayaran `pending`. Status pembayaran dapat diperbarui oleh admin.
+
+**Payment gateway belum terintegrasi secara otomatis.** Untuk menerima pembayaran sungguhan, integrasikan penyedia seperti Midtrans atau layanan lain yang sesuai, termasuk verifikasi callback pembayaran di sisi server.
+
+Harga produk pada versi ini juga dikelola admin dan belum mengambil harga emas real-time dari penyedia data pasar.
+
+## 🧪 Perintah Pengembangan
+
+Melihat seluruh route:
+
+```bash
+php artisan route:list
+```
+
+Menghapus cache konfigurasi:
+
+```bash
+php artisan config:clear
+php artisan cache:clear
+php artisan view:clear
+php artisan route:clear
+```
+
+Menjalankan pengujian Laravel:
+
+```bash
+php artisan test
+```
+
+## 📚 Referensi
+
+- Laravel: https://laravel.com
+- Dokumentasi Laravel 11: https://laravel.com/docs/11.x
+- Bootstrap: https://getbootstrap.com
+- MySQL: https://dev.mysql.com/doc/
+- Chart.js: https://www.chartjs.org
+- Bootstrap Icons: https://icons.getbootstrap.com
+
+## 🤝 Kontribusi
+
+Pengembangan aplikasi dapat dilanjutkan dengan menambahkan fitur upload gambar, harga emas real-time, payment gateway, invoice PDF, laporan Excel, notifikasi pesanan, serta pengelolaan pengiriman.
+
+## 📄 Lisensi
+
+Framework Laravel menggunakan lisensi MIT. Lisensi dan hak penggunaan komponen lain mengikuti ketentuan masing-masing dependensi.
+
+---
+
+<p align="center">
+  <strong>Aurelia Gold</strong><br>
+  Investasi nilai, sentuhan elegansi.
+</p>
